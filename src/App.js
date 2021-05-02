@@ -4,6 +4,8 @@ import { commerce } from './lib/commerce';
 
 const App = () => {
     const [products, setProducts] = useState([]);
+    const [cart, setCard] = useState({});
+
 
     const fetchProducts = async () => {
         const { data } = await commerce.products.list();
@@ -11,8 +13,13 @@ const App = () => {
         setProducts(data);
     }
 
+    const fetchCard = async () => {
+        setCart(await commerce.card.retrieve())
+    }
+
     useEffect(() => {
         fetchProducts();
+        fetchCart()
     }, []);
 
     return (
