@@ -14,7 +14,7 @@ const App = () => {
     }
 
     const fetchCard = async () => {
-        setCart(await commerce.card.retrieve())
+        // setCart(await commerce.card.retrieve())
     }
 
     const handleAddToCart = async (productId, quantity) => {
@@ -25,7 +25,7 @@ const App = () => {
 
     useEffect(() => {
         fetchProducts();
-        fetchCart()
+        // fetchCart()
     }, []);
 
     return (
